@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: MyMvcApp
+spec:
+  replicas: #replicaNo#
+  selector:
+    matchLabels:
+      app: MyMvcApp
+  template:
+    metadata:
+      labels:
+        app: MyMvcApp
+    spec:
+      containers:
+        - name: MyMvcApp
+          image: deploytoaks.azurecr.io/MyMvcApp
+          ports:
+          - containerPort: 80
